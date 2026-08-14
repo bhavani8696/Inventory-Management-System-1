@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: inventory-management-system-1
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app

@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inventory Management System 1</title><link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"></head><body>
+<nav><div class="logo">Inventory Marketplace</div>
+<div class="nav"><a href="/">Dashboard</a><a href="/products">Products</a><a href="/wishlist">Wishlist <span class="badge" data-wishlist-count>0</span></a><a href="/cart">Cart <span class="badge" data-cart-count>0</span></a>{% if admin_user %}<a href="/add-product">Add Product</a>{% endif %}<a href="/logout">Logout</a></div></nav>
+<main class="container">{% with messages=get_flashed_messages(with_categories=true) %}{% for category,msg in messages %}<div class="flash {{category}}">{{msg}}</div>{% endfor %}{% endwith %}
+<section class="hero"><h1>Welcome to Inventory Marketplace</h1><p>Manage products, stock, wishlist and cart from one place.</p><a class="btn" href="/products">Explore Products</a></section>
+<section class="stats"><div class="stat"><b>{{ total }}</b><p>Total Products</p></div><div class="stat"><b>{{ categories }}</b><p>Categories</p></div><div class="stat"><b>{{ stock }}</b><p>Total Stock</p></div><div class="stat"><b>{{ low }}</b><p>Low Stock</p></div></section>
+</main><script src="{{ url_for('static',filename='js/app.js') }}"></script></body></html>

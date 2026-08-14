@@ -1,0 +1,8 @@
+const W='inventory_wishlist', C='inventory_cart';
+const get=k=>JSON.parse(localStorage.getItem(k)||'[]');
+const set=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+function counts(){document.querySelectorAll('[data-wishlist-count]').forEach(x=>x.textContent=get(W).length);document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=get(C).length)}
+function wish(id,btn){id=Number(id);let a=get(W);if(a.includes(id)){a=a.filter(x=>x!==id);btn?.classList.remove('active')}else{a.push(id);btn?.classList.add('active')}set(W,a);counts();if(location.pathname==='/wishlist')renderSaved('wishlist')}
+function cart(id){id=Number(id);let a=get(C);if(!a.includes(id))a.push(id);set(C,a);counts();alert('Added to cart!')}
+async function renderSaved(type){const ids=get(type==='wishlist'?W:C);const box=document.getElementById('savedGrid');if(!box)return;box.innerHTML='';if(!ids.length){box.innerHTML='<div class="empty">No items saved yet.</div>';return}for(const id of ids){try{const p=await fetch('/api/product/'+id).then(r=>r.json());box.innerHTML+=`<article class="card"><img src="${p.image}" alt="${p.name}"><div class="cardbody"><span class="category">${p.category}</span><h3>${p.name}</h3><div class="price">₹${Number(p.price).toLocaleString('en-IN')}</div><div class="actions"><a class="btn" href="/product/${p.id}">View</a><button class="btn green" onclick="cart(${p.id})">Add to Cart</button></div></div></article>`}catch(e){}}}
+document.addEventListener('DOMContentLoaded',()=>{counts();document.querySelectorAll('.heart[data-id]').forEach(b=>{if(get(W).includes(Number(b.dataset.id)))b.classList.add('active')});renderSaved(location.pathname==='/wishlist'?'wishlist':'cart')});
