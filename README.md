@@ -7,8 +7,7 @@ The application provides a simple and user-friendly platform for managing produc
 ## 🚀 Live Demo
 
 Live Application:
-
-https://inventory-management-system-1-1.onrender.com
+https://inventory-management-system-1-3.onrender.com
 
 ## 📂 GitHub Repository
 
