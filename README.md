@@ -8,6 +8,9 @@ This application helps manage products, stock quantities, categories, product im
 
 👉 https://inventory-management-system-1-3.onrender.com
 
+## 🚀 Vedio demo link
+👉 https://drive.google.com/file/d/1W70tpi5wqXZ2r2i6R3yPjZaASy2Hzk0y/view?usp=sharing
+
 > Note: The Render free service may sleep when inactive. If the application takes a few seconds to open, please wait for the service to wake up.
 
 ---
