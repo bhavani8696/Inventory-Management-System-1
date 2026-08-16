@@ -10,10 +10,6 @@ This application helps manage products, stock quantities, categories, product im
 
 👉 https://inventory-management-system-1-3.onrender.com
 
-## 🎥 Video Demo
-
-👉 https://drive.google.com/file/d/1W70tpi5wqXZ2r2i6R3yPjZaASy2Hzk0y/view?usp=sharing
-
 ## 💻 GitHub Repository
 
 👉 https://github.com/bhavani8696/Inventory-Management-System-1
