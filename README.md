@@ -14,6 +14,9 @@ This application helps manage products, stock quantities, categories, product im
 
 👉 https://github.com/bhavani8696/Inventory-Management-System-1
 
+## 🚀 Demo Vedio link
+👉 https://youtu.be/XWkVT_EcDso?si=R1_2NlDtIjFnFv94
+
 > **Note:** The application is deployed on Render's free service. If the application has been inactive for some time, it may take a few seconds to wake up.
 
 ---
